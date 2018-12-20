@@ -9,6 +9,7 @@ function cdc(varargin)
 %% location of the different folders
 data = {
     'home'  "C:\Users\rickw\OneDrive\Documenten\MATLAB";
+    'doc'   "C:\Users\rickw\OneDrive\Documenten\MATLAB";
     'prog'  "C:\Users\rickw\OneDrive\Programming\Matlab";
     'study' "C:\Users\rickw\OneDrive\Studie\BMD_Master";
     'ufus'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\Thesis\Verasonic";
@@ -17,6 +18,7 @@ data = {
     'mbdb'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\ME41055 - Multibody Dynamics B";
     'so'    "C:\Users\rickw\OneDrive\Programming\Matlab\SO";
     'imph'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys\Verasonic";
+    'vera'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys\Vantage-3.4.0-1711281030";
 };
 
 
@@ -109,7 +111,12 @@ function printData()
     % print data to choose from
     fprintf('Folder shortcuts available:\n')
     for ii=1:nfolders
-        fprintf('\t%s\t\t%s\n', data{ii,1},data{ii,2});
+        % short shortcuts get extra \t
+        if length(data{ii,1}) < 4
+            fprintf('\t%s\t\t\t%s\n', data{ii,1},data{ii,2});
+        else
+            fprintf('\t%s\t\t%s\n', data{ii,1},data{ii,2});
+        end
     end
     fprintf('\n')
 end
