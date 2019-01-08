@@ -1,6 +1,11 @@
 function varargout = sizeof(variableName)
-%SIZEOF Obtain the number of bytes for a variable name
+%SIZEOF Obtain the number of bytes for a variable name (input variable name
+%   as 'char' array).
 
+    if ~isa(variableName, 'char')
+        error('Input the variable name in ''quotes''.')
+    end
+    
     nout = nargout;
 
     props = evalin('base', ['whos(''' variableName ''')']);
