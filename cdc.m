@@ -17,8 +17,9 @@ data = {
     'sipe'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\ME41065 - System Identification and Parameter Estimation";
     'mbdb'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\ME41055 - Multibody Dynamics B";
     'so'    "C:\Users\rickw\OneDrive\Programming\Matlab\SO";
-    'imph'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys\Verasonic";
+    'imph'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys";
     'vera'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys\Vantage-3.4.0-1711281030";
+    'emech' "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys\EMech_waves";
 };
 
 
