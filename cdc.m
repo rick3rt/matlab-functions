@@ -21,6 +21,7 @@ data = {
     'vera'  "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys\Vantage-3.4.0-1711281030";
     'emech' "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys\EMech_waves";
     'emw'   "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys\EMech_waves";
+    'mod'   "C:\Users\rickw\OneDrive\Studie\BMD_Master\Internship_ImPhys\EMech_waves\mechanical_model\model";
     'nmc'   "C:\Users\rickw\OneDrive\Studie\BMD_Master\NMC-TA"
 };
 
