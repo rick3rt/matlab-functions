@@ -3,7 +3,7 @@ function varargout = whossort(key)
 
     nout = nargout;
 
-    props = evalin('base', 'whos');
+    props = evalin('caller', 'whos');
 
     if ~exist('key', 'var') || isempty(key)
         key = 'bytes';
