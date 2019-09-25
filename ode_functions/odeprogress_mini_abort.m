@@ -42,9 +42,11 @@ function status = odeprogress_mini_abort(t, y, flag, Tend, abortFileName)
         try
             update_abort_file(abortFileName);
         catch ME
+
             if strcmp(ME.identifier, 'MATLAB:badfid_mx')
                 fprintf('Could not write file.\n')
             end
+
         end
 
     else

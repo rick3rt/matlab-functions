@@ -9,4 +9,8 @@ function [value, isterminal, direction] = myEventFcn3(t, y, maxTimeOut, abortFil
     isterminal(1) = 1;
     direction(1) = 0; % or 1. does not matter
 
+    if value(1) == 0
+        fprintf('SIMULATION TIME OUT\n')
+    end
+
 end
