@@ -12,6 +12,8 @@ function status = odeprog(t, y, flag, varargin)
     % Wake Forrest
     % May 2006
     global odeprogglobvar
+    
+    persistent ax
 
     if nargin < 3 || isempty(flag)
 
@@ -20,8 +22,10 @@ function status = odeprog(t, y, flag, varargin)
             sstrt = odeprogglobvar(2:7);
             %figure(95); % to disable popping to top (primary window)
             perc = t(end) / tfin;
-            area([t(end) tfin - t(end); t(end) tfin - t(end)]);
-            title([num2str(perc * 100) '%']);
+            if ishandle(ax)
+                area(ax, [t(end) tfin - t(end); t(end) tfin - t(end)]);
+                title(ax, [num2str(perc * 100) '%']);
+            end
             set(findobj('Tag', 'eltime'), 'String', etimev(clock, sstrt));
             set(findobj('Tag', 'esttime'), 'String', etimev(etime(clock, sstrt) / perc * (1 - perc)));
             odeprogglobvar(8:13) = clock;
@@ -39,7 +43,7 @@ function status = odeprog(t, y, flag, varargin)
                 sstrt = odeprogglobvar(2:7);
                 figure(95);
                 set(gcf, 'Position', [4, 40, 100, 500]);
-                axes('Position', [0.5, 0.25, 0.25, 0.6]);
+                ax = axes('Position', [0.5, 0.25, 0.25, 0.6]);
                 axis([1, 2, 0, tfin]);
                 set(gca, 'XTickLabel', [], 'NextPlot', 'replacechildren');
                 ylabel('Simulation Progress - Time (s)');
