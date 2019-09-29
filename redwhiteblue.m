@@ -1,4 +1,4 @@
-function newmap = redwhiteblue(m)
+function newmap = redwhiteblue(m, lims)
     %BLUEWHITERED   Blue, white, and red color map.
     %   BLUEWHITERED(M) returns an M-by-3 matrix containing a blue to white
     %   to red colormap, with white corresponding to the CAXIS value closest
@@ -37,7 +37,10 @@ function newmap = redwhiteblue(m)
     topmiddle = [0 0.5 1];
     top = [0 0 0.5];
     % Find middle
-    lims = get(gca, 'CLim');
+    if ~exist('lims', 'var')
+        lims = get(gca, 'CLim');
+    end
+
     % Find ratio of negative to positive
     if (lims(1) < 0) & (lims(2) > 0)
         % It has both negative and positive
